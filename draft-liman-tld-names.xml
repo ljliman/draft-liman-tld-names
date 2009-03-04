@@ -3,14 +3,14 @@
 
 <!-- Copyright (C) 2009 Lars-Johan Liman -->
 
-<!-- $Id: $ -->
+<!-- $Id: draft-liman-tld-names-00.xml,v 1.1 2009/03/04 00:36:49 liman Exp $ -->
 
 <?rfc compact="no"?>
 <?rfc toc="yes"?>
 <?rfc symrefs="yes"?>
 <?rfc strict="yes"?>
 
-<rfc category="std" ipr="trust200902" updates="1123"
+<rfc category="std" ipr="trust200902" updates="RFC 1123"
      docName="draft-liman-tld-names-00">
 
   <front>

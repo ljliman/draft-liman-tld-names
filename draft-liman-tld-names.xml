@@ -3,7 +3,7 @@
 
 <!-- Copyright (C) 2009 Lars-Johan Liman -->
 
-<!-- $Id: draft-liman-tld-names-00.xml,v 1.1 2009/03/04 00:36:49 liman Exp $ -->
+<!-- $Id: draft-liman-tld-names-00.xml,v 1.2 2009/03/04 00:40:07 liman Exp $ -->
 
 <?rfc compact="no"?>
 <?rfc toc="yes"?>
@@ -46,7 +46,7 @@
       <t>RFC 1123 is ambiguous regarding the specification for top
         level domain (TLD) labels used in the domain name
         system. This document clarifies the specification, and aligns
-        it with current praxis, including the use of Internationalized
+        it with current practise, including the use of Internationalized
         Domain Name (IDN) Labels in TLD names.</t>
 
     </abstract>
@@ -98,7 +98,7 @@
         for names that may be used for host names on the Internet. It
         is updated by <xref target="RFC1123">RFC 1123</xref>, which
         relaxes the specification somewhat. It is somewhat unclear
-        wheter the relaxation is per label or per entire host
+        whether the relaxation is per label or per entire host
         name.</t>
 
       <t>In order to avoid problems based on lack of clarity, the
@@ -132,7 +132,7 @@
 
       </figure>
 
-      <t>This new specification reflects current praxis in
+      <t>This new specification reflects current practise in
         registration of TLD names by the IANA, and allows for
         IDNs.</t>
 

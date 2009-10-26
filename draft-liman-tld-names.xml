@@ -73,12 +73,13 @@
 	support internationalized domain names that consist of Unicode
 	letters, as encoded by the IDNA protocols [RFCXXX]. In
 	particular, this document clarifies that ASCII TLDs beginning
-	with "xn--", as encoded by IDNA, are permissible as DNS TLD
-	names as long as they are made from Unicode letters. This
-	document focuses narrowly on the issue of allowable ASCII
-	labels encoded by the IDNA protocols and does not (and is not
-	intended to) make any other changes or clarifications to
-	existing domain name syntax rules.
+	with the IDN A-label prefix (currently "xn--"), as encoded by
+	IDNA, are permissible as DNS TLD names as long as they are
+	made from Unicode letters. This document focuses narrowly on
+	the issue of allowable ASCII labels encoded by the IDNA
+	protocols and does not (and is not intended to) make any other
+	changes or clarifications to existing domain name syntax
+	rules.
       </t>
 
       <section title="Terminology">
@@ -185,10 +186,9 @@
 	hereby changes the existing specification to allow for IDN TLD
 	names in the "A-label form" as specified by the IDNA-2008
 	specifications, i.e., an ASCII-compatible-encoding, using
-	reversible Punycode conversion from valid IDNs labels, with
-	IDN A-label prefix (which, as of this writing, is "xn--"), but
-	requiring that the native-character ("Unicode") form consist
-	of letters only.
+	reversible Punycode conversion from valid IDN labels, with
+	IDN A-label prefix (currently "xn--"), but requiring that the
+	native-character ("Unicode") form consist of letters only.
       </t>
 
       <figure>
@@ -221,8 +221,6 @@
 
       <figure>
 
-        <preamble>Foo:</preamble>
-
         <artwork type="abnf">
 
           ; Letter
@@ -243,8 +241,9 @@
       </figure>
 
       <t>
-	although the IDNA restriction eliminates the last two and
-	several of characters in the others.
+	although IDNA prohibits (categorizes as DISALLOWED) all
+	characters in the last two categories and several of the
+	characters that fall into the other categories.
       </t>
 
       <t>
@@ -343,6 +342,12 @@
 	  </t>
 	  <t>
 	    Verify quotations.
+	  </t>
+	  <t>
+	    Get rid of the term "jumping digits" and replace with
+	    appropriate wording. Also mention additional reasons not
+	    to have digits that relate to Input Method Editors and
+	    localization.
 	  </t>
 	</list>
       </t>

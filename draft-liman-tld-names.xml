@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
+<!DOCTYPE rfc SYSTEM "rfc2629.dtd">
 
-<!-- $Id: draft-liman-tld-names.xml,v 1.8 2010/04/06 17:50:18 liman Exp $ -->
+<!-- $Id: draft-liman-tld-names.xml,v 1.9 2010/04/06 21:02:44 liman Exp $ -->
 
 
 <?rfc compact="no"?>
@@ -8,15 +9,14 @@
 <?rfc symrefs="yes"?>
 <?rfc strict="yes"?>
 <!-- <?rfc-ext include-references-in-index="yes" ?> -->
-
 <?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>
 
-<!DOCTYPE rfc SYSTEM "rfc-liman.dtd">
 
 <!-- <rfc ipr="full2026" docName="draft-liman-tld-names-01"> -->
 <rfc ipr="trust200902"
      docName="draft-liman-tld-names-01"
      category="info">
+
 
   <front>
 
@@ -40,10 +40,10 @@
       </address>
     </author>
 
-    <date day="26" month="October" year="2009"/>
+    <date day="6" month="April" year="2010"/>
 
     <workgroup>
-      Individual submission
+      XXX MUPP Individual submission
     </workgroup>
     
     <abstract>
@@ -112,7 +112,7 @@
 
     <section title="Background">
 
-      <note title="JABLEY">
+<!--      <note title="JABLEY">
 	<t>
 	  I think this document would be easier to digest if the
 	  document structure looked more like this:
@@ -143,7 +143,7 @@
 	  specifications. A structure like that suggested above would
 	  make the document easier to refer to.
 	</t>
-      </note>
+      </note> -->
 
       <t><xref target="RFC0952">RFC 0952</xref> states (among other
       things) that a host name is;
@@ -230,14 +230,8 @@
 
       <figure>
 
-        <preamble>Hence, the ABNF expression that matches a valid TLD
+        <preamble>The ABNF expression that matches a valid TLD
         label is as follows:</preamble>
-
-	<note title="JABLEY">
-	  <t>
-	    Remove "Hence", above.
-	  </t>
-	</note>
 
         <artwork type="abnf">
 
@@ -350,33 +344,15 @@
 
     </section>
 
-  <note title="JABLEY">
-    <t>
-      Based purely on my limited understanding of the issues being
-      described here (see above) my inclination would be to replace
-      all this text with "This document presents no new security
-      threats to the Internet".
-    </t>
-  </note>
-
-  <note title="NARTEN">
-    <t>
-      Right.
-    </t>
-  </note>
-  
   </middle>
 
   <back>
 
     <references title="Normative References">
-      <t>
-<?rfc include="bibxml/reference.RFC.1123.xml"?>
-<!--      <?rfc include="bibxml/reference.RFC.1035.xml"?> -->
-<!--      <?rfc include="bibxml/reference.RFC.2119.xml"?> -->
-<!--     <?rfc include="bibxml/reference.RFC.3490.xml"?> -->
-      </t>
-
+	<?rfc include="bibxml/reference.RFC.1123.xml"?>
+	<?rfc include="bibxml/reference.RFC.1035.xml"?>
+	<?rfc include="bibxml/reference.RFC.2119.xml"?>
+<!--	<?rfc include="bibxml/reference.RFC.3490.xml"?> -->
     </references>
 
     <references title="Informative References">

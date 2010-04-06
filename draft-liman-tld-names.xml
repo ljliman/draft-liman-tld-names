@@ -1,21 +1,17 @@
 <?xml version="1.0"?>
-<!DOCTYPE rfc SYSTEM "rfc2629.dtd">
 
-<!-- $Id: draft-liman-tld-names.xml,v 1.5 2009/10/26 23:31:31 liman Exp $ -->
+<!-- $Id: draft-liman-tld-names.xml,v 1.6 2009/11/17 13:00:45 liman Exp $ -->
 
-<!--
-  Kommentarer från DNSOP-mötet i Hiroshima:
-  - Clarify why needed for the IETF
-  - 1123? Specification?
-  - IP address confusion?
-  - It is basically policy ...
-  - Need to talk more.
--->
 
 <?rfc compact="no"?>
 <?rfc toc="yes"?>
 <?rfc symrefs="yes"?>
 <?rfc strict="yes"?>
+<!-- <?rfc-ext include-references-in-index="yes" ?> -->
+
+<?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>
+
+<!DOCTYPE rfc SYSTEM "rfc-liman.dtd">
 
 <!-- <rfc ipr="full2026" docName="draft-liman-tld-names-01"> -->
 <rfc ipr="trust200902"
@@ -50,6 +46,18 @@
       Individual submission
     </workgroup>
     
+    <note title="JABLEY">
+      <t>
+	Does this document need to update RFC 1123 and 952?
+      </t>
+    </note>
+
+    <note title="NARTEN">
+      <t>
+	Hmm.. Probably!
+      </t>
+    </note>
+
     <abstract>
 
       <t>The precise syntax allowed in top-level domain name labels
@@ -63,20 +71,57 @@
 	existing domain name syntax rules.
       </t>
 
+      <note title="JABLEY">
+	<t>
+	  Given the imprecise language that appears in many old RFCs,
+	  I think this document *should* aim to clarify the
+	  specification with respect to top-level domains (as it
+	  does). The text above also makes mention of other documents
+	  without the ability to encode them as references, which is a
+	  minor nit.
+	</t>
+      </note>
+
+      <note title="NARTEN">
+	<t>
+	  FWIW, abstract isn't supposed to have references...
+	</t>
+      </note>
+
     </abstract>
 
   </front>
-  
+
   <middle>
 
     <section title="Introduction">
-
-
 
       <t>The precise syntax allowed in top-level domain (TLD) name
 	labels has been the subject to some debate.
 	<xref target="RFC1123">RFC 1123</xref>, for example, states
 	that TLD names must be "alphabetic", which is interpreted as
+
+	<note title="JABLEY">
+	  <t>
+	    interpreted by whom?
+	  </t>
+	</note>
+
+	<note title="NARTEN">
+	  <t>
+	    Intentionally left vague. :-) Doesn't matter who asserts
+	    this, the fact that it can be asserted is enough reason to
+	    fix.
+	  </t>
+	</note>
+
+	<note title="TINA">
+	  <t>
+	    ...which could be interpreted as excluding digits and the
+	    hyphen character.
+	  </t>
+	</note>
+
 	excluding the hyphen (or dash) character. This document
 	updates the definition of allowable top-level domain names to
 	support internationalized domain names that consist of Unicode
@@ -84,12 +129,71 @@
 	particular, this document clarifies that ASCII TLDs beginning
 	with the IDN A-label prefix (currently "xn--"), as encoded by
 	IDNA, are permissible as DNS TLD names as long as they are
-	made from Unicode letters. This document focuses narrowly on
+	made from Unicode letters.
+
+	<note title="JABLEY">
+	  <t>
+	    The language seems imprecise in this final sentence (the
+	    "they" refers to the a-label, or the unicode string that
+	    has been encoded as an a-label? Is "unicode letters"
+	    really a precise term?
+	  </t>
+	</note>
+
+	<note title="TINA">
+	  <t>
+	    I believe it is Unicode characters or code-points (not
+	    letters). While the A-label to U-label is a one-to-one
+	    "mapping", we always consider the A-label the
+	    authoritative, since it is the one entered in the zone.
+	  </t>
+	</note>
+
+	<note title="NARTEN">
+	  <t>
+	    paf suggested:
+	</t>
+	<t>
+	    ... names as long as they are valid "A-labels" [ref].
+	  </t>
+	</note>
+
+	This document focuses narrowly on
 	the issue of allowable ASCII labels encoded by the IDNA
 	protocols and does not (and is not intended to) make any other
 	changes or clarifications to existing domain name syntax
 	rules.
       </t>
+
+	<note title="JABLEY">
+	  <t>
+	    Does this document really mean to discuss ASCII labels
+	    encoded by the IDNA protocol to form a u-label? Or in fact
+	    does it intend to focus on the use of unicode strings as
+	    TLD labels, encoded as a-labels?
+	  </t>
+	</note>
+
+	<note title="TINA">
+	  <t>
+	    Either way is fine for me but I can see the logic in
+	    placing focus on the U-label, as this is what the
+	    users/applicant identify their need for, and which then is
+	    turned into an A-label.
+	  </t>
+	</note>
+
+	<note title="NARTEN">
+	  <t>
+	    A little of both, I think. I originally thought just
+	    A-Labels, but klensin at least suggested adding additional
+	    text on the unicode side. The theory (I think) is that a
+	    number of the existing TLD restrictions have to do with
+	    user considerations, and thus the same considerations
+	    still apply on the unicode view of the name. My
+	    understanding anyway...
+	  </t>
+	</note>
 
       <section title="Terminology">
 
@@ -98,6 +202,22 @@
           <xref target="RFC0952">RFC 0952</xref>
           and <xref target="RFC1035">RFC 1035</xref>.
 	</t>
+
+	<note title="JABLEY">
+	  <t>
+	    I think if we're going to say that, we should call out the
+	    particular terms we're using that are defined in those
+	    documents here in this section.
+	  </t>
+	</note>
+
+	<note title="NARTEN">
+	  <t>
+	    Do you have specific suggestions? Unless there is a clear
+	    need to bring in particular definitions (i.e., to add
+	    clarity), I'd prefer keeping things simple.
+	  </t>
+	</note>
 
       </section>
 
@@ -110,15 +230,86 @@
           &quot;OPTIONAL&quot; in this document are to be interpreted
           as described in <xref target="RFC2119">RFC 2119</xref>.</t>
 
+	<note title="JABLEY">
+	  <t>
+	    There seem to be no normative keywords in this
+	    document. It's not obvious that any are needed. Perhaps
+	    this section can be removed.
+	  </t>
+	</note>
+
+	<note title="NARTEN">
+	  <t>
+	    :-)
+	  </t>
+	</note>
+
       </section>
 
     </section>
 
     <section title="Background">
 
+      <note title="JABLEY">
+	<t>
+	  I think this document would be easier to digest if the
+	  document structure looked more like this:
+	</t>
+	<t>
+	  - Introduction
+	    (problem statement)
+	    (goal of document)
+	</t>
+	<t>
+	  - Contributing Specifications
+	  - RFC952
+	  - RFC1123
+	  - IDNA2008
+	</t>
+	<t>
+	  - Unified TLD label syntax specification
+	</t>
+	<t>
+	  - IANA Considerations
+	</t>
+	<t>
+	  - Security Considerations
+	</t>
+	<t>
+	  As it stands, the unified specification is buried in the
+	  "Background" section, conflated with the earlier, ambiguous
+	  specifications. A structure like that suggested above would
+	  make the document easier to refer to.
+	</t>
+      </note>
+
+      <note title="NARTEN">
+	<t>
+	  Do you mean to just shuffle text around, or will this
+	  require adding additional text for some of these sections?
+	</t>
+      </note>
+
       <t><xref target="RFC0952">RFC 0952</xref> states (among other
       things) that a host name is;
       </t>
+
+      <note title="JABLEY">
+	<t>
+	  If RFC 952 says other things about the specification for a
+	  host name that are worth mentioning, then it seems
+	  reasonable to quote those things. If it doesn't, then it
+	  doesn't seem useful to suggest that it does. I'd either
+	  expand the quote, or drop the parenthetical phrase.
+	</t>
+      </note>
+
+      <note title="NARTEN">
+	<t>
+	  Dropping is fine with me. (I think I came up with those
+	  words.)
+	</t>
+      </note>
 
       <t>
 	<list style="empty">
@@ -171,14 +362,50 @@
       <t>
 	The restrictions on host names and specifically TLD names
 	have always been, at least in part, driven by human factors
-	considerations.  Underscores in host names are avoided because
+	considerations.
+
+	<note title="JABLEY">
+	  <t>
+	    I think if that's to be stated as fact, we should cite a
+	    reference.
+	  </t>
+	</note>
+
+	<note title="NARTEN">
+	  <t>
+	    You mean for the "human factors considerations" part?  If
+	    there are references to this, I'd like to know what they
+	    are. This is something that goes way back in
+	    history. Klensin is one of the few who knows about this
+	    from way back...
+	  </t>
+	</note>
+
+	Underscores in host names are avoided because
 	they are indistinguishable from hyphens when seen on a page or
 	written in longhand, and to some extent because of early
-	internationalization issues.  The original "no leading digits"
+	internationalization issues.
+
+	<note title="JABLEY">
+	  <t>
+	    Same here.
+	  </t>
+	</note>
+
+	The original "no leading digits"
 	rule was driven by wanting to make sure that even imprecise
 	programming or human thought errors didn't confuse addresses
 	with names.
       </t>
+
+      <note title="JABLEY">
+	<t>
+	  Ditto. An alternative to including a citation would be to
+	  use less definitive language. I fear that making statements
+	  as fact without the ability to back them up will just leave
+	  us in last-call hell.
+	</t>
+      </note>
 
       <t>The wish to express TLD names in other scripts than Latin
 	makes it necessary to relax the the rules for TLD
@@ -189,10 +416,72 @@
 	"jumping digits", and is described in draft-ietf-idnabis-bidi.
       </t>
 
+      <note title="JABLEY">
+	<t>
+	  draft-ietf-idnabis-bidi-07 doesn't in fact contain the word
+	  "jumping". I'm not sure what "jumping digits" are,
+	  actually. If someone could explain, that would be useful
+	  background.
+	</t>
+      </note>
+
+
+      <note title="TINA">
+	<t>
+	  As previously stated I don't think there is a need to
+	  include the discussion on jumping digits. ICANN simply wont
+	  allow leading or trailing digits as long as this application
+	  layer exits.
+	</t>
+	<t>
+	  Joe, this is an issue where a TLD has either a leading or
+	  trailing digit and right-to-left scripts used as second or
+	  lower levels. What basically happens is that once entered in
+	  an application the digits have a tendency to jump to the
+	  other (lower level) side of the dot that separates
+	  secondlevel.toplevel. So if the domain name was "tina.1com"
+	  (where tina was Arabic characters), then it suddenly would
+	  become 1tina.com instead - which of course is completely
+	  different.
+	</t>
+      </note>
+
+      <note title="NARTEN">
+	<t>
+	  no opinion on whether we can take this out now.
+	</t>
+      </note>
+      
       <t>
 	In order to keep changes to existing specifications to a
 	minimum but to still allow for IDN TLD names, this document
-	hereby changes the existing specification to allow for IDN TLD
+	hereby changes the existing specification
+
+	<note title="JABLEY">
+	  <t>
+	    As I mentioned above, I think it's better to characterise
+	    this document as clarifying the existing ambiguous
+	    specifications, and extending them in a particular
+	    way. This would be easier to understand than the text
+	    above, where I think it's possible to observe an
+	    implication that there are other (small!) changes being
+	    made beyond those necessary to accommodate IDNA2008 TLD
+	    labels.
+	  </t>
+	</note>
+
+	<note title="NARTEN">
+	  <t>
+	    The potential problem with "clarifying" is that it implies
+	    that the wording is poor, but the original intent is known
+	    and that the new wording captures the original intent. I'm
+	    pretty sure that is NOT the case here... I.e., we don't
+	    want to start a community discussion about original
+	    intent...
+	  </t>
+	</note>
+
+	to allow for IDN TLD
 	names in the "A-label form" as specified by the IDNA-2008
 	specifications, i.e., an ASCII-compatible-encoding, using
 	reversible Punycode conversion from valid IDN labels, with
@@ -200,10 +489,22 @@
 	native-character ("Unicode") form consist of letters only.
       </t>
 
+      <note title="JABLEY">
+	<t>
+	  Is "letters" a sufficiently unambiguous term to use, here?
+	</t>
+      </note>
+      
       <figure>
 
         <preamble>Hence, the ABNF expression that matches a valid TLD
         label is as follows:</preamble>
+
+	<note title="JABLEY">
+	  <t>
+	    Remove "Hence", above.
+	  </t>
+	</note>
 
         <artwork type="abnf">
 
@@ -262,7 +563,30 @@
 
     </section>
 
-    <section title="Other Limitations on Top Level Domain Labels">
+    <note title="JABLEY">
+      <t>
+	I think it would be nice to make that last sentence clearer:
+	this new specification accommodates current IANA policy, and
+	also accommodates a possible extension of current IANA policy
+	to allow alphabetic u-labels as TLD labels, encoded using
+	IDNA2008. This document directs the IANA to make such a change
+	to its policy in the IANA Considerations section.
+      </t>
+    </note>
+
+    <note title="TINA">
+      <t>
+	Note: not just "alphabetic" U-labels. Maybe just remove
+	"alphabetic". Other than that I am concerned about making
+	changes to the IANA policy. It was a long time agreed with the
+	IANA staff that we are not making changes in policy for them
+	that needs a policy review and approval. It might be worth
+	checking in with them though - perhaps as we have a more clear
+	draft between us?
+      </t>
+    </note>
+    
+<section title="Other Limitations on Top Level Domain Labels">
 
       <t>
 	It should be noted that there are many issues that must be
@@ -289,6 +613,33 @@
 
     </section>
 
+    <note title="JABLEY">
+      <t>
+	I think this whole section (above) should be removed. It has
+	nothing to do with the specification of TLD labels, and smells
+	a lot like policy. The TLD policy framework as a whole would
+	probably not benefit from the confusion that policy-like
+	language enshrined in technical documents would no doubt
+	bring, in my opinion.
+      </t>
+    </note>
+
+    <note title="TINA">
+      <t>
+	+1
+      </t>
+    </note>
+
+    <note title="NARTEN">
+      <t>
+	It is intended to make clear that there may be other reasons
+	to say "no" to a particular TLD and this document is not
+	saying that allowing IDN TLDs won't have any problems. I don't
+	have any problem with saying that (though perhaps it could be
+	said better).
+      </t>
+    </note>
+
     <section title="IANA Considerations">
 
       <t>
@@ -298,6 +649,23 @@
       </t>
 
     </section>
+
+    <note title="JABLEY">
+      <t>
+	We need help from IANA people in phrasing the text above so
+	that they know precisely what to do with it. I can bring Kim
+	Davies into this conversation when we're ready for that.
+      </t>
+    </note>
+
+    <note title="TINA">
+      <t>
+	+1, see above. Also note that IANA already changed their
+	process to include and enable IDN TLDs. So I don't think the
+	change/update of this RFC is making that requirement of IANA
+	since it is already in place.
+      </t>
+    </note>
 
     <section title="Security Considerations">
 
@@ -310,8 +678,54 @@
         under this new specification may inter-operate badly with old
         software written to enforce a strict interpretation of the old
         specification.  This might also open up attack vectors
-        (e.g. form names being truncated). However, it is believed that
-        such software is scarce on the Internet, and since TLD names
+        (e.g. form names being truncated).
+
+	<note title="JABLEY">
+	  <t>
+	    I don't think we're suggesting that the stability of
+	    applications or services using existing TLDs (conforming
+	    to the specifications that this document updates) would be
+	    compromised by the revised specification in this
+	    document. We're saying here that there might well be some
+	    application-level defects that become apparent with TLDs
+	    that don't conform to the old specifications.
+
+	<note title="NARTEN">
+	  <t>
+	    Right.
+	  </t>
+	</note>
+
+	    It's not clear to me why this is a security issue, which
+	    makes me think that either there is no security issue to
+	    document, or that the text here needs to be clearer in
+	    describing what it is.
+	  </t>
+	</note>
+
+	<note title="NARTEN">
+	  <t>
+	    It could be if a user ends up going to a different site
+	    than they intended...
+	  </t>
+	</note>
+
+	However, it is believed that
+        such software is scarce on the Internet,
+
+	<note title="JABLEY">
+	  <t>
+	    Handwaving! Believed by whom? :-)
+	  </t>
+	</note>
+
+	<note title="NARTEN">
+	  <t>
+	    handwaiving indeed!
+	  </t>
+	</note>
+
+	and since TLD names
         that do not adhere to a strict interpretation of the old
         specification are already used (including test IDNs) without
         apparent problems, it is believed that this change of the
@@ -321,16 +735,32 @@
 
     </section>
 
+  <note title="JABLEY">
+    <t>
+      Based purely on my limited understanding of the issues being
+      described here (see above) my inclination would be to replace
+      all this text with "This document presents no new security
+      threats to the Internet".
+    </t>
+  </note>
+
+  <note title="NARTEN">
+    <t>
+      Right.
+    </t>
+  </note>
+  
   </middle>
 
   <back>
 
     <references title="Normative References">
-
-      <?rfc include="bibxml/reference.RFC.1035.xml"?>
-      <?rfc include="bibxml/reference.RFC.1123.xml"?>
-      <?rfc include="bibxml/reference.RFC.2119.xml"?>
+      <t>
+<?rfc include="bibxml/reference.RFC.1123.xml"?>
+<!--      <?rfc include="bibxml/reference.RFC.1035.xml"?> -->
+<!--      <?rfc include="bibxml/reference.RFC.2119.xml"?> -->
 <!--     <?rfc include="bibxml/reference.RFC.3490.xml"?> -->
+      </t>
 
     </references>
 
@@ -349,6 +779,19 @@
 	    Internet Drafts. Are they/will they be published as RFCs
 	    before this draft?
 	  </t>
+
+	  <note title="JABLEY">
+	    <t>
+	      They're all in the RFC editor queue as far as I can
+	      tell, which means they've presumably passed all their
+	      last calls and are sufficiently stable to cite. I don't
+	      think we should let the assignment of RFC numbers hold
+	      us up -- we can refer to them with their draft names and
+	      the RFC editor will make the changes if nobody else
+	      proposes them earlier.
+	    </t>
+	  </note>
+
 	  <t>
 	    Verify quotations.
 	  </t>
@@ -357,6 +800,29 @@
 	    appropriate wording. Also mention additional reasons not
 	    to have digits that relate to Input Method Editors and
 	    localization.
+	  </t>
+
+	  <t>
+	    Found some old notes: address comments from the
+	    DNSOP-meeting in Hiroshima:
+
+	    <list style="numbers">
+	      <t>
+		Clarify why needed for the IETF
+	      </t>
+	      <t>
+		1123? Specification?
+	      </t>
+	      <t>
+		IP address confusion?
+	      </t>
+	      <t>
+		It is basically policy ...
+	      </t>
+	      <t>
+		Need to talk more.
+	      </t>
+	    </list>
 	  </t>
 	</list>
       </t>

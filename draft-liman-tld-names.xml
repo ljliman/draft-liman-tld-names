@@ -524,38 +524,31 @@
 	Restricted-A-label is an A-label as defined in
 	draft-ietf-idna-defs converted from (and convertible to) a
 	U-label that is consistent with the definition in
-	draft-ietf-idna-defs and that is further restricted to
-	contain only Unicode characters of General Category "L".  Note
-	that "L" contains several sub-categories.  The list is:
+	draft-ietf-idna-defs and that is further restricted to contain
+	only Unicode characters with the derived property value PVALID
+	and of General Category "L" or "Mn".  Note that "L" contains
+	several sub-categories, and that many characters of the "L"
+	category do not have the derived property value
+	PVALID. Specifically, this specification do not allow use of
+	any character in a restricted-A-label that have derived
+	property value of CONTEXT.
       </t>
-
-      <figure>
-
-        <artwork type="abnf">
-
-          ; Letter
-          L = Ll / Lm / Lo / Lt / Lu
-
-          Ll = Lowercase-Letter
-
-          Lm = Modifier-Letter
-
-          Lo = Other-Letter
-
-          Lt = Titlecase-Letter
-
-          Lu = Uppercase-Letter
-
-        </artwork>
-
-      </figure>
-
       <t>
-	although IDNA prohibits (categorizes as DISALLOWED) all
-	characters in the last two categories and several of the
-	characters that fall into the other categories.
+	More specifically, restricted-A-label consist of one or more
+	Unicode characters so that all of the following statements are
+	true:
       </t>
-
+      <t>
+	- The label is a valid A-label according to draft-ietf-idna-defs
+      </t>
+      <t>
+	- The derived property value of all codepoints, as defined by
+	  draft-ietf-idna-defs, is PVALID
+      </t>
+      <t>
+	- The general category of all codepoints, is one of { Ll, Lu, Lo,
+	  Lm, Mn }
+      </t>
       <t>
 	This new specification reflects current practice in
         registration of TLD names by the IANA, and allows for IDNs.

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd">
 
-<!-- $Id: draft-liman-tld-names.xml,v 1.11 2010/04/07 19:39:27 liman Exp $ -->
+<!-- $Id: draft-liman-tld-names.xml,v 1.12 2010/04/07 20:28:50 liman Exp $ -->
 
 <?rfc compact="no"?>
 <?rfc toc="yes"?>
@@ -52,7 +52,7 @@
       </address>
     </author>
 
-    <date day="6" month="April" year="2010"/>
+    <date day="7" month="April" year="2010"/>
 
     <workgroup>Individual Submission</workgroup>
     
@@ -192,12 +192,12 @@
 	Category "L" or "Mn".  Note that "L" contains several
 	sub-categories, and that many characters of the "L" category
 	do not have the derived property value PVALID. Specifically,
-	this specification do not allow use of any character in a
-	Restricted-A-Label that have derived property value of
+	this specification does not allow use of any character in a
+	Restricted-A-Label that has derived property value of
 	CONTEXT.</t>
 
-      <t>More specifically, Restricted-A-Label consist of one or
-	more Unicode characters so that all of the following
+      <t>More specifically, a Restricted-A-Label consists of one or
+	more Unicode characters such that all of the following
 	statements are true:
 
         <list style="numbers">

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd">
 
-<!-- $Id: draft-liman-tld-names.xml,v 1.12 2010/04/07 20:28:50 liman Exp $ -->
+<!-- $Id: draft-liman-tld-names.xml,v 1.13 2010/04/07 21:33:05 liman Exp $ -->
 
 <?rfc compact="no"?>
 <?rfc toc="yes"?>
@@ -83,12 +83,12 @@
 
       <t>This document updates the definition of allowable top-level
 	domain names to support IDNs but places some restrictions
-	on the choice of IDN strings, consistent with the existing
+	on the choice of IDN labels, consistent with the existing
 	specification for US-ASCII TLD labels. See <xref
 	target="specification"/> for the updated specification.</t>
 
       <t>This document focuses narrowly on the issue of allowable
-	ASCII labels in TLDs and does not (and is not intended to)
+	labels in TLDs and does not (and is not intended to)
 	make any other changes or clarifications to existing domain
 	name syntax rules.</t>
 
@@ -160,7 +160,13 @@
 	in TLD DNS labels. To make the change as small as possible,
 	we restrict the U-label form of the label in ways functionally
 	compatible with the restrictions (from <xref target="RFC0952"/>
-	and <xref target="RFC1123"/>) on US-ASCII labels for TLDs.</t>
+	and <xref target="RFC1123"/>) on US-ASCII labels for TLDs.
+	This restriction will not enable new A-label TLDs to function
+	with existing software that checks DNS top-level labels for
+	conformance with the alphabetic restriction.  It merely makes
+	the same traditional rule work in a similar way for IDNA
+	top-level labels.</t>
+
     </section>
 
     <section title="TLD Label Syntax Specification" anchor="specification">
@@ -191,7 +197,7 @@
 	with the derived property value PVALID and of General
 	Category "L" or "Mn".  Note that "L" contains several
 	sub-categories, and that many characters of the "L" category
-	do not have the derived property value PVALID. Specifically,
+	do not have the derived property value PVALID. Most emphatically,
 	this specification does not allow use of any character in a
 	Restricted-A-Label that has derived property value of
 	CONTEXT.</t>
@@ -242,7 +248,7 @@
 	with software which (for example) does not accommodate TLD
 	labels which did not exist at the time the software was
 	written. Such software problems might in turn lead to
-	security vulnerabilities; e.g. in the event that a DNS name
+	security vulnerabilities; e.g., in the event that a DNS name
 	specified by a user is truncated or otherwise misinterpreted,
 	causing an application to interact with a different remote
 	host from that which the user intended. It should be noted

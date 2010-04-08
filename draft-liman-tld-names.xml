@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd">
 
-<!-- $Id: draft-liman-tld-names.xml,v 1.13 2010/04/07 21:33:05 liman Exp $ -->
+<!-- $Id: draft-liman-tld-names.xml,v 1.14 2010/04/08 19:42:55 liman Exp $ -->
 
 <?rfc compact="no"?>
 <?rfc toc="yes"?>
@@ -73,18 +73,18 @@
       <t>The syntax of Top-Level Domain (TLD) labels in the
 	Domain Name System (DNS) was specified somewhat imprecisely
 	in <xref target="RFC1123"/> which required that TLD names
-	be "alphabetic". This is commonly interpreted as excluding
+	be "alphabetic".  This is commonly interpreted as excluding
 	the hyphen character and numeric digits from TLD labels.
 	This restriction does not accommodate the US-ASCII encoding
 	of Internationalised Domain Names (IDNs), as specified in
-	<xref target="I-D.ietf-idnabis-defs"/>. A more detailed
+	<xref target="I-D.ietf-idnabis-defs"/>.  A more detailed
         discussion of the existing specifications can be found
         in <xref target="background"/>.</t>
 
       <t>This document updates the definition of allowable top-level
 	domain names to support IDNs but places some restrictions
 	on the choice of IDN labels, consistent with the existing
-	specification for US-ASCII TLD labels. See <xref
+	specification for US-ASCII TLD labels.  See <xref
 	target="specification"/> for the updated specification.</t>
 
       <t>This document focuses narrowly on the issue of allowable
@@ -95,7 +95,7 @@
       <t>It is carefully noted that the specification in this
 	document is not the only factor in choosing TLD labels, and
 	that many considerations external to the IETF are included
-	in that wider policy. See <xref target="policy"/> for more
+	in that wider policy.  See <xref target="policy"/> for more
 	discussion of policy considerations.</t>
     </section>
 
@@ -107,9 +107,9 @@
             drawn from the alphabet (A-Z), digits (0-9), minus sign
             (-), and period (.).  Note that periods are only allowed
             when they serve to delimit components of "domain style
-            names". (See RFC-921, "Domain Name System Implementation
+            names".  (See RFC-921, "Domain Name System Implementation
             Schedule", for background).  No blank or space characters
-            are permitted as part of a name. No distinction is made
+            are permitted as part of a name.  No distinction is made
             between upper and lower case.  The first character must
             be an alpha character.  The last character must not be
             a minus sign or period.' [Unnumbered section titled
@@ -136,28 +136,28 @@
       </t>
 
       <t>Neither <xref target="RFC0952"/> nor <xref target="RFC1123"/>
-	explicitly states the reasons for these restrictions. It
+	explicitly states the reasons for these restrictions.  It
 	might be supposed that human factors considerations were
 	involved; <xref target="RFC1123"/> appears to suggest that
 	one of the reasons was to prevent confusion between
-	dotted-decimal IPv4 addresses and host domain names. In any
+	dotted-decimal IPv4 addresses and host domain names.  In any
 	case, it is reasonable to believe that the restrictions are
 	often assumed in deployed software, and that changing the
 	rules should be undertaken with caution.</t>
 
       <t>The Internationalised Domain Names in Applications (IDNA)
         2008 specification provides a protocol for encoding
-        unicode strings in DNS labels. The unicode string used by
+        unicode strings in DNS labels.  The unicode string used by
         applications is known as a U-Label; its corresponding
-        encoding in the DNS is known as an A-Label. The terms A-Label
+        encoding in the DNS is known as an A-Label.  The terms A-Label
         and U-Label are used in this document as defined in <xref
-        target="I-D.ietf-idnabis-defs"/>. Valid A-Labels always
+        target="I-D.ietf-idnabis-defs"/>.  Valid A-Labels always
         contain non-alphabetic characters.</t>
 
       <t>In order to accommodate the wish to express TLD names in
 	scripts other than Latin (or rather, the US-ASCII subset
 	of Latin), it is necessary to allow non-alphabetic characters
-	in TLD DNS labels. To make the change as small as possible,
+	in TLD DNS labels.  To make the change as small as possible,
 	we restrict the U-label form of the label in ways functionally
 	compatible with the restrictions (from <xref target="RFC0952"/>
 	and <xref target="RFC1123"/>) on US-ASCII labels for TLDs.
@@ -197,7 +197,7 @@
 	with the derived property value PVALID and of General
 	Category "L" or "Mn".  Note that "L" contains several
 	sub-categories, and that many characters of the "L" category
-	do not have the derived property value PVALID. Most emphatically,
+	do not have the derived property value PVALID.  Most emphatically,
 	this specification does not allow use of any character in a
 	Restricted-A-Label that has derived property value of
 	CONTEXT.</t>
@@ -228,7 +228,7 @@
 
       <t>At the time of writing, the policy under which TLD names
         are chosen is developed and maintained by ICANN in
-        consultation with a wide base of stakeholders. As the
+        consultation with a wide base of stakeholders.  As the
         Internet continues to grow to serve new user communities,
         applications and services, it is to be expected that the 
         corresponding policy will be changed accordingly.</t>
@@ -237,7 +237,7 @@
     <section title="IANA Considerations">
       <t>This document makes no requests of the IANA.</t>
 
-      <t>This section needs IANA review. :-)</t>
+      <t>This section needs IANA review.  :-)</t>
     </section>
 
     <section title="Security Considerations">
@@ -247,11 +247,11 @@
       <t>The creation of new TLDs has the potential to conflict
 	with software which (for example) does not accommodate TLD
 	labels which did not exist at the time the software was
-	written. Such software problems might in turn lead to
+	written.  Such software problems might in turn lead to
 	security vulnerabilities; e.g., in the event that a DNS name
 	specified by a user is truncated or otherwise misinterpreted,
 	causing an application to interact with a different remote
-	host from that which the user intended. It should be noted
+	host from that which the user intended.  It should be noted
 	that this is not a new phenomenon, and has been observed
 	following the creation of new TLDs prior to the publication
 	of this document.</t>
@@ -281,13 +281,13 @@
 
       <section title="draft-liman-tld-names-01">
 	<t>Substantial comments and improvements supplied by Thomas
-	  Narten and John Klensin. Decided to go for a minimal change
-	  approach. Also noted that U-labels have to be letters due to
-	  jumping digit problem. Rewritten major parts.</t>
+	  Narten and John Klensin.  Decided to go for a minimal change
+	  approach.  Also noted that U-labels have to be letters due to
+	  jumping digit problem.  Rewritten major parts.</t>
       </section>
 
       <section title="draft-liman-tld-names-00">
-	<t>First cut. Prompted by Olafur Gudmundsson and Tina Dam.</t>
+	<t>First cut.  Prompted by Olafur Gudmundsson and Tina Dam.</t>
       </section>
     </section>
   </back>

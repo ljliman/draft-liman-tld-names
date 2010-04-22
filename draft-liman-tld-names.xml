@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd">
 
-<!-- $Id: draft-liman-tld-names.xml,v 1.16 2010/04/08 19:57:25 liman Exp $ -->
+<!-- $Id: draft-liman-tld-names.xml,v 1.17 2010/04/19 14:04:09 liman Exp $ -->
 
 <?rfc compact="no"?>
 <?rfc toc="yes"?>
@@ -256,6 +256,11 @@
 	that this is not a new phenomenon, and has been observed
 	following the creation of new TLDs prior to the publication
 	of this document.</t>
+
+      <t>The issue of characters that can be confused with each other
+        is a risk, but it is discussed at length in the Security
+        Considerations section of
+        <xref target="I-D.ietf-idnabis-defs"/>.</t>
     </section>
   </middle>
 

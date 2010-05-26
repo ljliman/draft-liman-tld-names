@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd">
 
-<!-- $Id: draft-liman-tld-names.xml,v 1.20 2010/05/26 20:07:21 liman Exp $ -->
+<!-- $Id: draft-liman-tld-names.xml,v 1.21 2010/05/26 20:34:32 liman Exp $ -->
 
 <?rfc compact="no"?>
 <?rfc toc="yes"?>
@@ -19,7 +19,9 @@
      category="std">
 
   <front>
-    <title>Top Level Domain Name Specification</title>
+    <title>Top Level Domain Name Specification
+      $Id: draft-liman-tld-names.xml,v 1.20 2010/05/26 20:07:21 liman Exp $
+    </title>
 
     <author initials="L-J." surname="Liman" fullname="Lars-Johan Liman">
       <organization abbrev="Autonomica">

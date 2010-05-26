@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd">
 
-<!-- $Id: draft-liman-tld-names.xml,v 1.19 2010/04/22 09:33:21 liman Exp $ -->
+<!-- $Id: draft-liman-tld-names.xml,v 1.20 2010/05/26 20:07:21 liman Exp $ -->
 
 <?rfc compact="no"?>
 <?rfc toc="yes"?>
@@ -179,7 +179,9 @@
       <t>This document relaxes the existing specification to allow TLD
 	labels to be well-formed A-Labels, but places restrictions on
 	the corresponding U-Labels that are more strict than what the
-	IDN standard <xref target="UNK-IDNA2008"/> allows.</t>
+	IDN standard
+	<xref target="I-D.ietf-idnabis-protocol"/><xref target="I-D.ietf-idnabis-tables"/>
+	allows.</t>
 
       <figure>
         <preamble>The ABNF expression that matches a valid TLD
@@ -236,7 +238,6 @@
     <section title="IANA Considerations">
       <t>This document makes no requests of the IANA.</t>
 
-      <t>This section needs IANA review.  :-)</t>
     </section>
 
     <section title="Security Considerations">
@@ -330,23 +331,56 @@
 		target='http://www.ietf.org/internet-drafts/draft-ietf-idnabis-defs-13.txt' />
       </reference>
 
-      <reference anchor='UNK-IDNA2008'>
+      <reference anchor='I-D.ietf-idnabis-protocol'>
 	<front>
-	  <title>
-	    *** UNKNOWN ***
+	  <title>Internationalized Domain Names in Applications
+	    (IDNA): Protocol
 	  </title>
-	  <author initials='N' surname="O'Body" fullname="Nefarious O'Body">
+
+	  <author initials='J' surname='Klensin' fullname='John  Klensin'>
 	    <organization />
 	  </author>
-	  <date month='Ikomember' day='22' year='2099' />
-	  <abstract>
-	    <t>
-	      This document is very abstract.
-	    </t>
+
+	  <date month='July' day='13' year='2009' />
+
+	  <abstract><t>This document is the revised protocol
+	      definition for internationalized domain names (IDNs).
+	      The rationale for changes, the relationship to the older
+	      specification, and important</t>
 	  </abstract>
+
 	</front>
+
+	<seriesInfo name='Internet-Draft' value='draft-ietf-idnabis-protocol-13' />
 	<format type='TXT'
-		target='/dev/null' />
+		target='http://www.ietf.org/internet-drafts/draft-ietf-idnabis-protocol-13.txt' />
+      </reference>
+
+
+      <reference anchor='I-D.ietf-idnabis-tables'>
+	<front>
+	  <title>The Unicode code points and IDNA
+	  </title>
+
+	  <author initials='P' surname='Faltstrom' fullname='Patrik Faltstrom'>
+	    <organization />
+	  </author>
+
+	  <date month='January' day='9' year='2010' />
+
+	  <abstract><t>This document specifies rules for deciding
+	      whether a code point, considered in isolation or in context,
+	      is a candidate for inclusion in an Internationalized Domain
+	      Name (IDN).  It is part of the specification of
+	      Internationalizing Domain Names in Applications 2008
+	      (IDNA2008).</t>
+	  </abstract>
+
+	</front>
+
+	<seriesInfo name='Internet-Draft' value='draft-ietf-idnabis-tables-09' />
+	<format type='TXT'
+		target='http://www.ietf.org/internet-drafts/draft-ietf-idnabis-tables-09.txt' />
       </reference>
 
     </references>
@@ -400,3 +434,5 @@
     </section>
   </back>
 </rfc>
+
+

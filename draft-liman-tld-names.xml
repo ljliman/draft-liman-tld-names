@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd">
 
-<!-- $Id: draft-liman-tld-names.xml,v 1.18 2010/04/22 09:26:15 liman Exp $ -->
+<!-- $Id: draft-liman-tld-names.xml,v 1.19 2010/04/22 09:33:21 liman Exp $ -->
 
 <?rfc compact="no"?>
 <?rfc toc="yes"?>
@@ -102,7 +102,7 @@
     <section title="Background" anchor="background">
       <t><xref target="RFC0952"/> defines a host name as follows:
 
-        <list style="empty">
+	<list style="empty">
           <t>'A "name" ... is a text string up to 24 characters
             drawn from the alphabet (A-Z), digits (0-9), minus sign
             (-), and period (.).  Note that periods are only allowed
@@ -114,27 +114,33 @@
             be an alpha character.  The last character must not be
             a minus sign or period.' [Unnumbered section titled
             "ASSUMPTIONS", first paragraph]</t>
-        </list>
-      </t>
+	</list>
 
-      <t><xref target="RFC1123"/> reaffirms this
-        definition, making two additional changes to the syntax:
+	<xref target="RFC1123"/> reaffirms this
+        definition, making one additional changes to the syntax:
 
-        <list style="numbers">
+	<list style="empty">
           <t>'The syntax of a legal Internet host name was specified
             in RFC-952 [DNS:4].  One aspect of host name syntax is
             hereby changed: the restriction on the first character
             is relaxed to allow either a letter or a digit.  Host
             software MUST support this more liberal syntax.' [Section
             2.1]</t>
-
+	</list>
+      
+	In addition, the DISCUSSION section of Section 2.1
+	says:
+      
+	<list style="empty">
           <t>'However, a valid host name can never have the
             dotted-decimal form #.#.#.#, since at least the
             highest-level component label will be alphabetic.'
             [Section 2.1]</t>
-        </list>
-      </t>
-
+	</list>
+      
+	Some implementers may have understood the above phrase 'will
+	be alphabetic' to be a protocol restriction.</t>
+      
       <t>Neither <xref target="RFC0952"/> nor <xref target="RFC1123"/>
 	explicitly states the reasons for these restrictions.  It
 	might be supposed that human factors considerations were
@@ -170,9 +176,10 @@
     </section>
 
     <section title="TLD Label Syntax Specification" anchor="specification">
-      <t>This document relaxes the existing specification to allow
-	TLD labels to be well-formed A-Labels, but places restrictions
-	on the corresponding U-Labels.</t>
+      <t>This document relaxes the existing specification to allow TLD
+	labels to be well-formed A-Labels, but places restrictions on
+	the corresponding U-Labels that are more strict than what the
+	IDN standard <xref target="UNK-IDNA2008"/> allows.</t>
 
       <figure>
         <preamble>The ABNF expression that matches a valid TLD
@@ -180,7 +187,6 @@
 
         <artwork type="abnf">
           tldlabel = traditional-tld-label / idn-label
-
 
           traditional-tld-label = 1*63(ALPHA)
 
@@ -194,20 +200,13 @@
 	<xref target="I-D.ietf-idnabis-defs"/> converted from (and
 	convertible to) a U-Label that is consistent with the
 	definition in <xref target="I-D.ietf-idnabis-defs"/> and that
-	is further restricted to contain only Unicode characters
-	with the derived property value PVALID and of General
-	Category "L" or "Mn".  Note that "L" contains several
-	sub-categories, and that many characters of the "L" category
-	do not have the derived property value PVALID.  Most emphatically,
-	this specification does not allow use of any character in a
-	Restricted-A-Label that has derived property value of
-	CONTEXT.</t>
+	is further restricted as follows.</t>
+      
+      <t>A Restricted-A-Label consists of one or more
+	Unicode characters such that all of the following statements are
+	true:
 
-      <t>More specifically, a Restricted-A-Label consists of one or
-	more Unicode characters such that all of the following
-	statements are true:
-
-        <list style="numbers">
+	<list style="numbers">
 	  <t>the label is a valid A-Label according to
 	    <xref target="I-D.ietf-idnabis-defs"/>;</t>
 	  <t>the derived property value of all codepoints, as defined
@@ -215,9 +214,8 @@
 	  <t>the general category of all codepoints, is one of {
 	    Ll, Lo, Lm, Mn }.</t>
 	</list>
-      </t>
-
-      <t>This new specification reflects current practice in
+	
+	This new specification reflects current practice in
 	registration of TLD names by the IANA, extended to
         accommodate IDNs.</t>
     </section>
@@ -245,6 +243,11 @@
       <t>This document is believed to have limited security
 	implications.</t>
 
+      <t>General discussion about the security effects of
+	internationalized labels are found in
+	<xref target="I-D.ietf-idnabis-defs"/>, section 4.  Those
+	considerations apply equally to top-level labels.</t>
+
       <t>The creation of new TLDs has the potential to conflict
 	with software which (for example) does not accommodate TLD
 	labels which did not exist at the time the software was
@@ -256,6 +259,10 @@
 	that this is not a new phenomenon, and has been observed
 	following the creation of new TLDs prior to the publication
 	of this document.</t>
+
+      <t>In addition, the probability of a truncated TLD mapping into
+	another valid TLD is small given the small number of TLDs that are
+	actually in use today.</t>
 
       <t>The issue of characters that can be confused with each other
         is a risk, but it is discussed at length in the Security
@@ -321,6 +328,25 @@
 	<seriesInfo name='Internet-Draft' value='draft-ietf-idnabis-defs-13' />
 	<format type='TXT'
 		target='http://www.ietf.org/internet-drafts/draft-ietf-idnabis-defs-13.txt' />
+      </reference>
+
+      <reference anchor='UNK-IDNA2008'>
+	<front>
+	  <title>
+	    *** UNKNOWN ***
+	  </title>
+	  <author initials='N' surname="O'Body" fullname="Nefarious O'Body">
+	    <organization />
+	  </author>
+	  <date month='Ikomember' day='22' year='2099' />
+	  <abstract>
+	    <t>
+	      This document is very abstract.
+	    </t>
+	  </abstract>
+	</front>
+	<format type='TXT'
+		target='/dev/null' />
       </reference>
 
     </references>

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd">
 
-<!-- $Id: draft-liman-tld-names.xml,v 1.26 2010/05/27 18:24:39 liman Exp $ -->
+<!-- $Id: draft-liman-tld-names.xml,v 1.27 2010/05/27 18:26:08 liman Exp $ -->
 
 <?rfc compact="no"?>
 <?rfc toc="yes"?>
@@ -401,13 +401,15 @@
       <section title="draft-liman-tld-names-00">
 	<t>First cut.  Prompted by Olafur Gudmundsson and Tina Dam.</t>
       </section>
+    </section>
 
-      <section title="Version Identification Tag">
-        <t>
-	  $Id: draft-liman-tld-names.xml,v 1.26 2010/05/27 18:24:39 liman Exp $
-        </t>
-      </section>
+    <section title="Version Identification Tag">
+      <t>
+	(To be removed in final RFC version.)
+      </t>
+      <t>
+	$Id: draft-liman-tld-names.xml,v 1.27 2010/05/27 18:26:08 liman Exp $
+      </t>
     </section>
   </back>
 </rfc>
-

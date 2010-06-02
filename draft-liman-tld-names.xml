@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd">
 
-<!-- $Id: draft-liman-tld-names.xml,v 1.28 2010/05/27 18:30:32 liman Exp $ -->
+<!-- $Id: draft-liman-tld-names.xml,v 1.24 2010/05/27 10:51:33 liman Exp $ -->
 
 <?rfc compact="no"?>
 <?rfc toc="yes"?>
@@ -70,25 +70,18 @@
 
   <middle>
     <section title="Introduction">
-      <t>The term DNS-Label is used in this document to have precisely
-	the same meaning as the term "label", as used in
-	<xref target="RFC1034"/>. A DNS-Label is an octet string in
-	wire-format. DNS-Labels may be either ASCII-labels or
-	non-ASCII-labels as described in
-	<xref target="I-D.ietf-idnabis-defs"/>. A Top-Level
-	Domain (TLD) DNS-Label is hence the right-most
-	("highest-level") DNS-Label in a fully-qualified domain
-	name.</t>
-
-      <t>The syntax of TLD DNS-Labels is specified somewhat imprecisely
-	in <xref target="RFC1123"/>, where TLD DNS-Labels are
-	required to be "alphabetic".  This is commonly interpreted
-	as excluding the hyphen character ("-") and numeric digits.
-	This restriction does not accommodate the US-ASCII encoding
-	of Internationalised Domain Names (IDNs), as specified in
-	<xref target="I-D.ietf-idnabis-defs"/>.  A more detailed
-	discussion of the existing specifications can be found in
-	<xref target="background"/>.</t>
+      <t>The syntax of TLD labels ("TLD DNS-Labels", as defined in
+	<xref target="definitions"/>) is specified 
+	in <xref target="RFC1123"/>, where such labels are required
+	to be "alphabetic" within a section of that document entitled
+	"DISCUSSION". This is commonly interpreted as requiring
+	that the hyphen character ("-") and numeric digits be
+	excluded from TLD DNS-Labels.  This restriction does not
+	accommodate the US-ASCII encoding of Internationalised
+	Domain Names (IDNs), as specified in <xref
+	target="I-D.ietf-idnabis-defs"/>.  A more detailed discussion
+	of the existing specifications can be found in <xref
+	target="background"/>.</t>
 
       <t>This document extends the syntax of allowable TLD DNS-Labels
 	to support IDNs, but places some restrictions on the choice
@@ -107,6 +100,23 @@
 	DNS-Labels, and that many considerations external to the
 	IETF are included in that wider policy.  See <xref
 	target="policy"/> for more discussion of policy considerations.</t>
+    </section>
+
+    <section title="Definitions" anchor="definitions">
+      <t>The term DNS-Label is used in this document to have precisely
+	the same meaning as the term "label", as introduced in <xref
+	target="RFC1034"/>, section 3.1.  A DNS-Label denotes one
+	node in a DNS tree. A DNS-Label is zero to 63 octets in
+	length.  The term "DNS-Label" refers exclusively to the
+	"wire format" of the label, and not to any presentation
+	format of the label.</t>
+
+      <t>A Top-Level Domain (TLD) DNS-Label is the right-most
+	("highest-level") DNS-Label in a fully-qualified domain
+	name.</t>
+
+      <t>The terms A-Label and U-Label are used in this document
+        as defined in <xref target="I-D.ietf-idnabis-defs"/>.</t>
     </section>
 
     <section title="Background" anchor="background">
@@ -164,8 +174,8 @@
         specification (IDNA2008)
         <xref target="I-D.ietf-idnabis-protocol"/>
         <xref target="I-D.ietf-idnabis-tables"/>
-	provides a protocol for encoding unicode strings in DNS-Labels.
-	The unicode string used by applications is known as a
+	provides a protocol for encoding Unicode strings in DNS-Labels.
+	The Unicode string used by applications is known as a
 	U-Label; its corresponding encoding in the DNS is known as
 	an A-Label.  The terms A-Label and U-Label are used in this
 	document as defined in <xref target="I-D.ietf-idnabis-defs"/>.
@@ -234,9 +244,10 @@
     </section>
 
     <section title="Policy Considerations" anchor="policy">
-      <t>This document provides a technical specification for TLD
-	DNS-Label syntax; it does not encapsulate a complete policy
-	under which TLD names may be chosen.</t>
+      <t>This document provides a technical specification that
+	limits the set of TLD DNS-Labels that are available for
+	assignment; it does not aim to encapsulate the full policy
+	framework within which TLD names are chosen.</t>
 
       <t>At the time of writing, the policy under which TLD names
 	are chosen is developed and maintained by ICANN in consultation
@@ -247,7 +258,11 @@
     </section>
 
     <section title="IANA Considerations">
-      <t>This document makes no requests of the IANA.</t>
+      <t>While this document makes no requests of the IANA, management
+	of the root zone is an IANA function. This document expands
+	the set of strings permitted for delegation from the root
+	zone, and hence establishes new limits for the corresponding
+	IANA policy.</t>
     </section>
 
     <section title="Security Considerations">
@@ -255,9 +270,9 @@
         implications.</t>
 
       <t>General discussion about the security effects of
-	internationalized DNS-Labels can be found in <xref
+	internationalized labels can be found in <xref
 	target="I-D.ietf-idnabis-defs"/>, section 4.  Those
-	considerations apply equally to TLD DNS-Labels.</t>
+	considerations apply equally to TLD labels.</t>
 
       <t>The creation of new TLDs has the potential to conflict
 	with software which (for example) pre-dates and correspondingly
@@ -284,6 +299,12 @@
 	with each other is discussed at length in the Security
 	Considerations section of <xref
 	target="I-D.ietf-idnabis-defs"/>.</t>
+    </section>
+
+    <section title="Acknowledgements">
+      <t>Tina Dam, Patrik Faltstrom, John Klensin, Thomas Narten
+        and Andrew Sullivan contributed text to this document, and
+        their contributions are hereby acknowledged.</t>
     </section>
   </middle>
 
@@ -404,15 +425,12 @@
       <section title="draft-liman-tld-names-00">
 	<t>First cut.  Prompted by Olafur Gudmundsson and Tina Dam.</t>
       </section>
-    </section>
 
-    <section title="Version Identification Tag">
-      <t>
-	(To be removed in final RFC version.)
-      </t>
-      <t>
-	$Id: draft-liman-tld-names.xml,v 1.28 2010/05/27 18:30:32 liman Exp $
-      </t>
+      <section title="Version Identification Tag">
+        <t>
+	  $Id: draft-liman-tld-names.xml,v 1.24 2010/05/27 10:51:33 liman Exp $
+        </t>
+      </section>
     </section>
   </back>
 </rfc>

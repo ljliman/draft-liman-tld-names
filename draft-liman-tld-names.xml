@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd">
 
-<!-- $Id: draft-liman-tld-names.xml,v 1.24 2010/05/27 10:51:33 liman Exp $ -->
+<!-- $Id: draft-liman-tld-names.xml,v 1.30 2010/06/02 12:04:35 liman Exp $ -->
 
 <?rfc compact="no"?>
 <?rfc toc="yes"?>
@@ -14,7 +14,7 @@
 <!-- <rfc ipr="full2026" docName="draft-liman-tld-names-01"> -->
 <!-- <rfc ipr="trust200902" -->
 <rfc ipr="trust200902"
-     docName="draft-liman-tld-names-02"
+     docName="draft-liman-tld-names-03"
      updates="1123"
      category="std">
 
@@ -52,7 +52,7 @@
       </address>
     </author>
 
-    <date day="27" month="May" year="2010"/>
+    <date day="8" month="June" year="2010"/>
 
     <workgroup>Individual Submission</workgroup>
     
@@ -344,13 +344,12 @@
 	  <title>Internationalized Domain Names in Applications
 	    (IDNA): Protocol</title>
 	  <author initials='J' surname='Klensin' fullname='John
-	    Klensin'>
-	    <organization/>
+	    Klensin'> 
+	    <organization />
 	  </author>
-	  <date month='July' day='13' year='2009'/>
+	  <date month='January' day='7' year='2010' />
 	</front>
-        <seriesInfo name='Internet-Draft'
-          value='draft-ietf-idnabis-protocol-13'/>
+	<seriesInfo name='Internet-Draft' value='draft-ietf-idnabis-protocol-18' />
       </reference>
 
       <reference anchor='I-D.ietf-idnabis-tables'>
@@ -403,7 +402,12 @@
 
     <section title="Change History">
       <t>This section (and sub-sections) should be removed before
-        publication/</t>
+        publication.</t>
+
+      <section title="draft-liman-tld-names-03">
+        <t>More wordsmithing, and explanatory text. Work on the IANA
+        and the security considerasions sections.</t>
+      </section>
 
       <section title="draft-liman-tld-names-02">
         <t>Wordsmithing and rearrangement of text following discussions
@@ -428,7 +432,7 @@
 
       <section title="Version Identification Tag">
         <t>
-	  $Id: draft-liman-tld-names.xml,v 1.24 2010/05/27 10:51:33 liman Exp $
+	  $Id: draft-liman-tld-names.xml,v 1.30 2010/06/02 12:04:35 liman Exp $
         </t>
       </section>
     </section>

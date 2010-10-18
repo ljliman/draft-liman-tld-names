@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd">
 
-<!-- $Id: draft-liman-tld-names.xml,v 1.32 2010/10/15 12:29:37 liman Exp $ -->
+<!-- $Id: draft-liman-tld-names.xml,v 1.33 2010/10/15 12:32:20 liman Exp $ -->
 
 <?rfc compact="no"?>
 <?rfc toc="yes"?>
@@ -52,7 +52,7 @@
       </address>
     </author>
 
-    <date day="15" month="October" year="2010"/>
+    <date day="18" month="October" year="2010"/>
 
     <workgroup>Individual Submission</workgroup>
     
@@ -79,7 +79,7 @@
 	excluded from TLD DNS-Labels.  Such a restriction would not
 	accommodate the US-ASCII encoding of Internationalised
 	Domain Names (IDNs), as specified in <xref
-	target="I-D.ietf-idnabis-defs"/>.  A more detailed discussion
+	target="RFC5890"/>.  A more detailed discussion
 	of the existing specifications can be found in <xref
 	target="background"/>.</t>
 
@@ -116,7 +116,7 @@
 	name.</t>
 
       <t>The terms A-Label and U-Label are used in this document
-        as defined in <xref target="I-D.ietf-idnabis-defs"/>.</t>
+        as defined in <xref target="RFC5890"/>.</t>
     </section>
 
     <section title="Background" anchor="background">
@@ -172,13 +172,13 @@
 
       <t>The Internationalised Domain Names in Applications 2008
         specification (IDNA2008)
-        <xref target="I-D.ietf-idnabis-protocol"/>
-        <xref target="I-D.ietf-idnabis-tables"/>
+        <xref target="RFC5891"/>
+        <xref target="RFC5892"/>
 	provides a protocol for encoding Unicode strings in DNS-Labels.
 	The Unicode string used by applications is known as a
 	U-Label; its corresponding encoding in the DNS is known as
 	an A-Label.  The terms A-Label and U-Label are used in this
-	document as defined in <xref target="I-D.ietf-idnabis-defs"/>.
+	document as defined in <xref target="RFC5890"/>.
 	Valid A-Labels always contain non-alphabetic characters.</t>
 
       <t>In order to accommodate the wish to express TLD names in
@@ -218,21 +218,15 @@
         </artwork>
       </figure>
 
-      <t>Restricted-A-label is an A-Label as defined in <xref
-	target="I-D.ietf-idnabis-defs"/>, converted from (and
-	convertible to) a U-Label that is consistent with the
-	definition in <xref target="I-D.ietf-idnabis-defs"/>, and
-	further restricted as follows.</t>
-
       <t>A Restricted-A-Label is a DNS-Label which satisifies all
         the following conditions:
 
 	<list style="numbers">
 	  <t>the DNS-Label is a valid A-Label according to <xref
-	    target="I-D.ietf-idnabis-defs"/>;</t>
+	    target="RFC5890"/>;</t>
 
 	  <t>the derived property value of all codepoints, as defined
-	    by <xref target="I-D.ietf-idnabis-defs"/>, is PVALID;</t>
+	    by <xref target="RFC5890"/>, is PVALID;</t>
 
 	  <t>the general category of all codepoints, is one of {
 	    Ll, Lo, Lm, Mn }.</t>
@@ -271,7 +265,7 @@
 
       <t>General discussion about the security effects of
 	internationalized labels can be found in <xref
-	target="I-D.ietf-idnabis-defs"/>, section 4.  Those
+	target="RFC5890"/>, section 4.  Those
 	considerations apply equally to TLD labels.</t>
 
       <t>The creation of new TLDs has the potential to conflict
@@ -298,7 +292,7 @@
       <t>The issue that some Unicode characters can be confused
 	with each other is discussed at length in the Security
 	Considerations section of <xref
-	target="I-D.ietf-idnabis-defs"/>.</t>
+	target="RFC5890"/>.</t>
     </section>
 
     <section title="Acknowledgements">
@@ -325,44 +319,38 @@
 	<seriesInfo name='RFC' value='1123'/>
       </reference>
 
-      <reference anchor='I-D.ietf-idnabis-defs'>
+      <reference anchor='RFC5890'>
 	<front>
-	  <title>Internationalized Domain Names for Applications
-	    (IDNA): Definitions and Document Framework </title>
-	  <author initials='J' surname='Klensin' fullname='John
-	    Klensin'>
-	    <organization/>
-          </author>
-          <date month='January' day='7' year='2010'/>
+	  <title>Internationalized Domain Names for Applications (IDNA): Definitions and Document Framework</title>
+	  <author initials='J.' surname='Klensin' fullname='J. Klensin'>
+	    <organization /></author>
+	  <date year='2010' month='August' />
 	</front>
-        <seriesInfo name='Internet-Draft'
-          value='draft-ietf-idnabis-defs-13'/>
+	<seriesInfo name='RFC' value='5890' />
+	<format type='TXT' octets='54245' target='http://www.rfc-editor.org/rfc/rfc5890.txt' />
       </reference>
 
-      <reference anchor='I-D.ietf-idnabis-protocol'>
+
+      <reference anchor='RFC5891'>
 	<front>
-	  <title>Internationalized Domain Names in Applications
-	    (IDNA): Protocol</title>
-	  <author initials='J' surname='Klensin' fullname='John
-	    Klensin'> 
-	    <organization />
-	  </author>
-	  <date month='January' day='7' year='2010' />
+	  <title>Internationalized Domain Names in Applications (IDNA): Protocol</title>
+	  <author initials='J.' surname='Klensin' fullname='J. Klensin'>
+	    <organization /></author>
+	  <date year='2010' month='August' />
 	</front>
-	<seriesInfo name='Internet-Draft' value='draft-ietf-idnabis-protocol-18' />
+	<seriesInfo name='RFC' value='5891' />
+	<format type='TXT' octets='38105' target='http://www.rfc-editor.org/rfc/rfc5891.txt' />
       </reference>
 
-      <reference anchor='I-D.ietf-idnabis-tables'>
+      <reference anchor='RFC5892'>
 	<front>
-          <title>The Unicode code points and IDNA</title>
-	  <author initials='P' surname='Faltstrom' fullname='Patrik
-	    Faltstrom'>
-            <organization/>
-	  </author>
-	  <date month='January' day='9' year='2010'/>
+	  <title>The Unicode Code Points and Internationalized Domain Names for Applications (IDNA)</title>
+	  <author initials='P.' surname='Faltstrom' fullname='P. Faltstrom'>
+	    <organization /></author>
+	  <date year='2010' month='August' />
 	</front>
-        <seriesInfo name='Internet-Draft'
-          value='draft-ietf-idnabis-tables-09'/>
+	<seriesInfo name='RFC' value='5892' />
+	<format type='TXT' octets='187370' target='http://www.rfc-editor.org/rfc/rfc5892.txt' />
       </reference>
     </references>
 
@@ -404,6 +392,14 @@
       <t>This section (and sub-sections) should be removed before
         publication.</t>
 
+      <section title="draft-liman-tld-names-04">
+        <t>Removed subjective and unverified statments regarding
+        deployed software. Replaced with more generic text. Polishing
+        a few expressions to make them less obtrusive. Removed
+        confusing paragraph after BNF table. Updated some references
+        that are now published as RFCs.</t>
+      </section>
+
       <section title="draft-liman-tld-names-03">
         <t>More wordsmithing, and explanatory text. Work on the IANA
         and the security considerasions sections.</t>
@@ -432,7 +428,7 @@
 
       <section title="Version Identification Tag">
         <t>
-	  $Id: draft-liman-tld-names.xml,v 1.32 2010/10/15 12:29:37 liman Exp $
+	  $Id: draft-liman-tld-names.xml,v 1.33 2010/10/15 12:32:20 liman Exp $
         </t>
       </section>
     </section>

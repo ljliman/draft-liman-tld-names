@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd">
 
-<!-- $Id: draft-liman-tld-names.xml,v 1.34 2010/10/18 12:36:15 liman Exp $ -->
+<!-- $Id: draft-liman-tld-names.xml,v 1.35 2010/10/19 09:17:53 liman Exp $ -->
 
 <?rfc compact="no"?>
 <?rfc toc="yes"?>
@@ -218,17 +218,17 @@
         </artwork>
       </figure>
 
-      <t>A Restricted-A-Label is a DNS-Label which satisifies all
+      <t>A Restricted-A-Label is a DNS-Label which satisfies all
         the following conditions:
 
 	<list style="numbers">
 	  <t>the DNS-Label is a valid A-Label according to <xref
 	    target="RFC5890"/>;</t>
 
-	  <t>the derived property value of all codepoints, as defined
+	  <t>the derived property value of all code points, as defined
 	    by <xref target="RFC5890"/>, is PVALID;</t>
 
-	  <t>the general category of all codepoints, is one of {
+	  <t>the general category of all code points, is one of {
 	    Ll, Lo, Lm, Mn }.</t>
 	</list>
 
@@ -269,7 +269,7 @@
 	considerations apply equally to TLD labels.</t>
 
       <t>The creation of new TLDs has the potential to conflict
-	with software which (for example) pre-dates and correspondingly
+	with software which (for example) predates and correspondingly
 	does not accommodate new TLD names.  Such software problems
 	might in turn lead to security vulnerabilities, e.g. in the
 	case where a DNS name specified by a user is truncated or
@@ -393,16 +393,16 @@
         publication.</t>
 
       <section title="draft-liman-tld-names-04">
-        <t>Removed subjective and unverified statments regarding
+        <t>Removed subjective and unverified statements regarding
         deployed software. Replaced with more generic text. Polishing
         a few expressions to make them less obtrusive. Removed
-        confusing paragraph after BNF table. Updated some references
+        confusing paragraph after ABNF table. Updated some references
         that are now published as RFCs.</t>
       </section>
 
       <section title="draft-liman-tld-names-03">
         <t>More wordsmithing, and explanatory text. Work on the IANA
-        and the security considerasions sections.</t>
+        and the security considerations sections.</t>
       </section>
 
       <section title="draft-liman-tld-names-02">
@@ -428,7 +428,7 @@
 
       <section title="Version Identification Tag">
         <t>
-	  $Id: draft-liman-tld-names.xml,v 1.34 2010/10/18 12:36:15 liman Exp $
+	  $Id: draft-liman-tld-names.xml,v 1.35 2010/10/19 09:17:53 liman Exp $
         </t>
       </section>
     </section>

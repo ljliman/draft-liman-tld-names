@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd">
 
-<!-- $Id: draft-liman-tld-names.xml,v 1.33 2010/10/15 12:32:20 liman Exp $ -->
+<!-- $Id: draft-liman-tld-names.xml,v 1.34 2010/10/18 12:36:15 liman Exp $ -->
 
 <?rfc compact="no"?>
 <?rfc toc="yes"?>
@@ -14,7 +14,7 @@
 <!-- <rfc ipr="full2026" docName="draft-liman-tld-names-01"> -->
 <!-- <rfc ipr="trust200902" -->
 <rfc ipr="trust200902"
-     docName="draft-liman-tld-names-03"
+     docName="draft-liman-tld-names-04"
      updates="1123"
      category="std">
 
@@ -428,7 +428,7 @@
 
       <section title="Version Identification Tag">
         <t>
-	  $Id: draft-liman-tld-names.xml,v 1.33 2010/10/15 12:32:20 liman Exp $
+	  $Id: draft-liman-tld-names.xml,v 1.34 2010/10/18 12:36:15 liman Exp $
         </t>
       </section>
     </section>

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd">
 
-<!-- $Id: draft-liman-tld-names.xml,v 1.38 2011/04/12 07:53:35 liman Exp $ -->
+<!-- $Id: draft-liman-tld-names.xml,v 1.39 2011/04/12 08:11:44 liman Exp $ -->
 
 <?rfc compact="no"?>
 <?rfc toc="yes"?>
@@ -65,6 +65,8 @@
       <t>This document provides a concise specification of TLD label
 	syntax based on existing syntax documentation, extended
 	minimally to accommodate IDNs.</t>
+
+      <t>This document updates RFC1123.</t>
     </abstract>
   </front>
 
@@ -433,7 +435,7 @@
 
       <section title="Version Identification Tag">
         <t>
-	  $Id: draft-liman-tld-names.xml,v 1.38 2011/04/12 07:53:35 liman Exp $
+	  $Id: draft-liman-tld-names.xml,v 1.39 2011/04/12 08:11:44 liman Exp $
         </t>
       </section>
     </section>

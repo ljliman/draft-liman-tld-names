@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd">
 
-<!-- $Id: draft-liman-tld-names.xml,v 1.35 2010/10/19 09:17:53 liman Exp $ -->
+<!-- $Id: draft-liman-tld-names.xml,v 1.36 2010/10/19 09:55:48 liman Exp $ -->
 
 <?rfc compact="no"?>
 <?rfc toc="yes"?>
@@ -22,18 +22,18 @@
     <title>Top Level Domain Name Specification</title>
 
     <author initials="L-J." surname="Liman" fullname="Lars-Johan Liman">
-      <organization abbrev="Autonomica">
-        Autonomica AB
+      <organization abbrev="Netnod">
+        Netnod Internet Exchange
       </organization>
       <address>
        <postal>
-           <street>Franzengatan 5</street>
-           <city>SE-112 51 Stockholm</city>
+           <street>Box 30194</street>
+           <city>SE-104 25 Stockholm</city>
 <!--       <code>SE-118 47</code>    # This doesn't work for Swedes -->
            <country>Sweden</country>
        </postal>
-        <email>liman@autonomica.se</email>
-        <uri>http://www.autonomica.se/</uri>
+        <email>liman@netnod.se</email>
+        <uri>http://www.netnod.se/</uri>
       </address>
     </author>
 
@@ -393,6 +393,11 @@
         publication.</t>
 
       <section title="draft-liman-tld-names-04">
+	<t>New affiliation and address for Liman, due to company
+	merger.</t>
+      </section>
+
+      <section title="draft-liman-tld-names-04">
         <t>Removed subjective and unverified statements regarding
         deployed software. Replaced with more generic text. Polishing
         a few expressions to make them less obtrusive. Removed
@@ -428,7 +433,7 @@
 
       <section title="Version Identification Tag">
         <t>
-	  $Id: draft-liman-tld-names.xml,v 1.35 2010/10/19 09:17:53 liman Exp $
+	  $Id: draft-liman-tld-names.xml,v 1.36 2010/10/19 09:55:48 liman Exp $
         </t>
       </section>
     </section>

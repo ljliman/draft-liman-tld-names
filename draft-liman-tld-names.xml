@@ -1,7 +1,5 @@
 <?xml version="1.0"?>
-<!DOCTYPE rfc SYSTEM "rfc2629.dtd">
-
-<!-- $Id: draft-liman-tld-names.xml,v 1.40 2011/04/12 08:20:42 liman Exp $ -->
+<!-- <!DOCTYPE rfc SYSTEM "rfc2629.dtd"> -->
 
 <?rfc compact="no"?>
 <?rfc toc="yes"?>
@@ -16,20 +14,24 @@
 <rfc ipr="trust200902"
      docName="draft-liman-tld-names-05"
      updates="1123"
-     category="std">
+     submissionType="independent"
+     category="info"
+     tocInclude="true"
+     sortRefs="true"
+     symRefs="true">
 
   <front>
     <title>Top Level Domain Name Specification</title>
 
     <author initials="L-J." surname="Liman" fullname="Lars-Johan Liman">
       <organization abbrev="Netnod">
-        Netnod Internet Exchange
+        Netnod AB
       </organization>
       <address>
        <postal>
-           <street>Box 30194</street>
-           <city>SE-104 25 Stockholm</city>
-<!--       <code>SE-118 47</code>    # This doesn't work for Swedes -->
+           <street>Greta Garbos väg 13</street>
+           <city>Solna</city>
+           <code>SE-169 40</code>
            <country>Sweden</country>
        </postal>
         <email>liman@netnod.se</email>
@@ -52,7 +54,7 @@
       </address>
     </author>
 
-    <date day="12" month="April" year="2011"/>
+    <date day="19" month="June" year="2025"/>
 
     <workgroup>Individual Submission</workgroup>
     
@@ -283,9 +285,9 @@
 	this document.</t>
 
 <!--
-  -- I'm not sure this is defensible, as-stated, so I've commented
-  -- it out. -jabley
-  --
+     I'm not sure this is defensible, as-stated, so I've commented
+     it out. -jabley
+
       <t>In addition, the probability of a truncated TLD mapping
 	into another valid TLD is small given the small number of
 	TLDs that are actually in use today.</t>
@@ -433,11 +435,6 @@
 	<t>First cut.  Prompted by Olafur Gudmundsson and Tina Dam.</t>
       </section>
 
-      <section title="Version Identification Tag">
-        <t>
-	  $Id: draft-liman-tld-names.xml,v 1.40 2011/04/12 08:20:42 liman Exp $
-        </t>
-      </section>
     </section>
   </back>
 </rfc>

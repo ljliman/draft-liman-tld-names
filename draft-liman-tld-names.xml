@@ -40,17 +40,9 @@
     </author>
 
     <author initials="J." surname="Abley" fullname="Joe Abley">
-      <organization>ICANN</organization>
+      <organization>Cloudflare</organization>
       <address>
-        <postal>
-          <street>4676 Admiralty Way</street>
-          <street>Suite 330</street>
-          <city>Marina del Rey</city>
-          <code>90292</code>
-          <country>USA</country>
-        </postal>
-        <email>joe.abley@icann.org</email>
-        <uri>http://www.icann.org/</uri>
+        <email>jabley@cloudflare.com</email>
       </address>
     </author>
 

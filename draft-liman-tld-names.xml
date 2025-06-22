@@ -35,7 +35,7 @@
            <country>Sweden</country>
        </postal>
         <email>liman@netnod.se</email>
-        <uri>http://www.netnod.se/</uri>
+        <uri>https://www.netnod.se/</uri>
       </address>
     </author>
 
@@ -323,7 +323,7 @@
 	  <date year='2010' month='August' />
 	</front>
 	<seriesInfo name='RFC' value='5890' />
-	<format type='TXT' octets='54245' target='http://www.rfc-editor.org/rfc/rfc5890.txt' />
+	<format type='TXT' octets='54245' target='https://www.rfc-editor.org/rfc/rfc5890.txt' />
       </reference>
 
 
@@ -335,7 +335,7 @@
 	  <date year='2010' month='August' />
 	</front>
 	<seriesInfo name='RFC' value='5891' />
-	<format type='TXT' octets='38105' target='http://www.rfc-editor.org/rfc/rfc5891.txt' />
+	<format type='TXT' octets='38105' target='https://www.rfc-editor.org/rfc/rfc5891.txt' />
       </reference>
 
       <reference anchor='RFC5892'>
@@ -346,7 +346,7 @@
 	  <date year='2010' month='August' />
 	</front>
 	<seriesInfo name='RFC' value='5892' />
-	<format type='TXT' octets='187370' target='http://www.rfc-editor.org/rfc/rfc5892.txt' />
+	<format type='TXT' octets='187370' target='https://www.rfc-editor.org/rfc/rfc5892.txt' />
       </reference>
     </references>
 
